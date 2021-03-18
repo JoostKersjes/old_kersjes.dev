@@ -10,7 +10,7 @@ function Home(): ReactElement {
       </Head>
 
       <StandardLayout>
-        <section></section>
+        <section className="kd_max-w-container"></section>
       </StandardLayout>
     </>
   );
