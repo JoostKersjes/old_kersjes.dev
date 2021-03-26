@@ -4,7 +4,6 @@ import Link from 'next/link';
 const menuItems: { text: string; href: string }[] = [
   { text: 'Home', href: '/' },
   { text: 'Joost', href: '/joost' },
-  { text: 'News Feed', href: '/feed' },
 ];
 
 function LayoutHeader(): ReactElement {
@@ -13,7 +12,7 @@ function LayoutHeader(): ReactElement {
   return (
     <header className="kd_bg-gradient font-mono font-medium">
       <div className="flex justify-between items-center kd_max-w-container">
-        <h1 className="text-cyan-200 text-lg sm:text-xl flex-shrink-0">
+        <h1 className="text-cyan-200 font-bold text-lg sm:text-xl flex-shrink-0">
           <Link href="/">
             <a className="flex items-center hover:underline focus:underline">
               <img src="/catjam.gif" alt="Cat vibing GIF" width="50" className="mr-2 rounded" />
@@ -37,12 +36,12 @@ function LayoutHeader(): ReactElement {
           <ul
             className={`w-full rounded text-right absolute top-12 bg-pink-200 text-pink-700 overflow-hidden ${
               mobileMenu ? `max-h-[${(menuItems.length * 10) / 4}rem]` : 'max-h-0'
-            } md:max-h-14 md:static md:flex md:items-center md:bg-opacity-0 md:text-pink-200 md:overflow-visible`}
+            } md:max-h-14 md:static md:flex md:space-x-4 md:items-center md:bg-opacity-0 md:text-pink-200 md:overflow-visible`}
           >
             {menuItems.map((item) => (
-              <li key={item.text} className="md:ml-4">
+              <li key={item.text}>
                 <Link href={item.href}>
-                  <a className="block px-4 py-2 rounded md:shadow md:bg-white md:bg-opacity-10 md:hover:bg-opacity-25 hover:bg-pink-100 md:focus-visible:bg-opacity-25 focus-visible:bg-pink-100">
+                  <a className="block px-4 py-2 rounded md:shadow-lg md:bg-white md:bg-opacity-10 md:hover:bg-opacity-25 hover:bg-pink-100 md:focus-visible:bg-opacity-25 focus-visible:bg-pink-100">
                     {item.text}
                   </a>
                 </Link>

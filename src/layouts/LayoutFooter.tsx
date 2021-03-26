@@ -7,7 +7,7 @@ function LayoutFooter(): ReactElement {
         <a className="hover:underline focus:underline" href="mailto:joost@kersjes.dev">
           joost@kersjes.dev
         </a>
-        <span className="pl-2">© 2021 Joost Kersjes</span>
+        <span className="pl-2 from-cyan-500">&copy; 2021 Joost Kersjes</span>
       </div>
     </footer>
   );

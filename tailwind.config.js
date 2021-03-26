@@ -12,6 +12,9 @@ module.exports = {
       white: colors.white,
     },
     extend: {
+      backgroundImage: {
+        'hero': 'url("/svgbackgrounds.com.large-triangles.svg")',
+      },
       gridTemplateRows: {
         layout: 'auto 1fr auto',
       },
