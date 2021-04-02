@@ -4,60 +4,46 @@ import Link from 'next/link';
 const menuItems: { text: string; href: string }[] = [
   { text: 'Home', href: '/' },
   { text: 'Joost', href: '/joost' },
-  { text: 'News Feed', href: '/feed' },
 ];
 
 function LayoutHeader(): ReactElement {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <header className="bg-gradient-to-r from-purple-600 to-blue-600 font-mono p-4">
-      <div className="flex justify-between items-center max-w-screen-xl mx-auto">
-        <h1 className="text-purple-200 text-xl">
+    <header className="kd_bg-gradient font-mono font-medium">
+      <div className="flex justify-between items-center kd_max-w-container">
+        <h1 className="text-cyan-200 font-bold text-lg sm:text-xl flex-shrink-0">
           <Link href="/">
-            <a className="flex items-center">
-              {/* TODO: use local gif */}
-              <img
-                src="https://media.tenor.com/images/fbe87eaae3021042c02739d0634306f2/tenor.gif"
-                alt="Catjam GIF"
-                width="50"
-                className="mr-2 rounded"
-              />
+            <a className="flex items-center hover:underline focus:underline">
+              <img src="/catjam.gif" alt="Cat vibing GIF" width="50" className="mr-2 rounded" />
               <span>Kersjes.dev</span>
             </a>
           </Link>
         </h1>
 
-        <nav className="block text-blue-200 overflow-visible">
+        <nav className="block relative md:static text-pink-200 overflow-visible">
           <button
-            className="md:hidden px-4 py-2 rounded shadow bg-white bg-opacity-10 hover:bg-opacity-25 w-full"
+            className="md:hidden px-10 sm:px-14 py-2 w-full rounded shadow bg-white bg-opacity-10 hover:bg-opacity-25 focus:outline-none focus-visible:bg-opacity-25"
             onClick={() => setMobileMenu(!mobileMenu)}
           >
             Menu
           </button>
 
-          <ul className="hidden md:flex md:items-center">
-            {menuItems.map((item) => (
-              <li key={item.text} className="ml-4">
-                <Link href={item.href}>
-                  <a className="block px-4 py-2 rounded shadow bg-white bg-opacity-10 hover:bg-opacity-25">
-                    {item.text}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          {/* TODO: Make mobile menu use the normal menu HTML */}
-          {/* TODO: Use a dropdown menu */}
+          {mobileMenu && (
+            <div className="md:hidden right-3 -bottom-4 bg-pink-200 absolute w-4 h-4 transform rotate-45"></div>
+          )}
+
           <ul
-            className={`md:hidden ${
-              mobileMenu ? `max-h-32` : 'max-h-0'
-            } bg-gray-300  text-gray-700 font-mono overflow-hidden transition-all duration-300 ease-in-out motion-reduce:transition-none text-center rounded-b-lg`}
+            className={`w-full rounded text-right absolute top-12 bg-pink-200 text-pink-700 overflow-hidden ${
+              mobileMenu ? `max-h-[${(menuItems.length * 10) / 4}rem]` : 'max-h-0'
+            } md:max-h-14 md:static md:flex md:space-x-4 md:items-center md:bg-opacity-0 md:text-pink-200 md:overflow-visible`}
           >
             {menuItems.map((item) => (
               <li key={item.text}>
                 <Link href={item.href}>
-                  <a className="block px-4 py-2 hover:bg-gray-200">{item.text}</a>
+                  <a className="block px-4 py-2 rounded md:shadow-lg md:bg-white md:bg-opacity-10 md:hover:bg-opacity-25 hover:bg-pink-100 md:focus-visible:bg-opacity-25 focus-visible:bg-pink-100">
+                    {item.text}
+                  </a>
                 </Link>
               </li>
             ))}

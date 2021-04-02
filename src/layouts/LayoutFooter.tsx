@@ -2,10 +2,12 @@ import React, { ReactElement } from 'react';
 
 function LayoutFooter(): ReactElement {
   return (
-    <footer className="bg-gray-900 text-gray-600 p-4">
-      <div className="flex justify-between items-center max-w-screen-xl mx-auto">
-        <a href="mailto:joost@kersjes.dev">joost@kersjes.dev</a>
-        <span>© 2021 Joost Kersjes</span>
+    <footer className="bg-gray-900 text-gray-600">
+      <div className="flex justify-end items-center space-x-2 divide-x divide-gray-600 kd_max-w-container">
+        <a className="hover:underline focus:underline" href="mailto:joost@kersjes.dev">
+          joost@kersjes.dev
+        </a>
+        <span className="pl-2 from-cyan-500">&copy; 2021 Joost Kersjes</span>
       </div>
     </footer>
   );
