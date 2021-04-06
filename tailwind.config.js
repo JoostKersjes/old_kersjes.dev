@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  mode: 'jit',
   purge: ['./public/**/*.html', './src/**/*.{ts,tsx}'],
   darkMode: false,
   theme: {
@@ -13,7 +14,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'hero': 'url("/svgbackgrounds.com.large-triangles.svg")',
+        hero: 'url("/svgbackgrounds.com.large-triangles.svg")',
       },
       gridTemplateRows: {
         layout: 'auto 1fr auto',
