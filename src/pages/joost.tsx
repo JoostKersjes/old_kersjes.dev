@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
+
 import Emoji from '../components/Emoji';
 import StandardLayout from '../layouts/StandardLayout';
 

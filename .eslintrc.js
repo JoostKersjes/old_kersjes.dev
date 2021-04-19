@@ -44,6 +44,14 @@ module.exports = {
         ],
         // Include .prettierrc.js rules
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+        // Consistent imports
+        'sort-imports': [
+          'error',
+          {
+            allowSeparatedGroups: true,
+            memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none'],
+          },
+        ],
       },
     },
   ],
