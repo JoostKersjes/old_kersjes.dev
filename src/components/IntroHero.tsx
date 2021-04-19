@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import React, { ReactElement } from 'react';
+import type { ReactElement } from 'react';
+
 import Emoji from './Emoji';
 
 function IntroHero(): ReactElement {
@@ -10,7 +11,7 @@ function IntroHero(): ReactElement {
           <h1 className="text-lg text-center">
             Hi! I&apos;m
             <br />
-            <span className="inline-block text-5xl">Joost Kersjes</span>
+            <span className="inline-block text-5xl">Joost&nbsp;Kersjes</span>
           </h1>
 
           <div className="sm:row-span-full kd_bg-gradient h-72 w-72 rounded-full shadow-lg flex items-center justify-center hover:from-cyan-500 hover:to-pink-600">
@@ -36,7 +37,7 @@ function IntroHero(): ReactElement {
             >
               Tripolis
             </a>{' '}
-            (formerly Webpower)
+            (formerly known as Webpower)
           </p>
 
           <div className="text-cyan-200 my-auto">

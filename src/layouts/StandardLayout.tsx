@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import LayoutContainer from './LayoutContainer';
 import LayoutFooter from './LayoutFooter';
 import LayoutHeader from './LayoutHeader';
