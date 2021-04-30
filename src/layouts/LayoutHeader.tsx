@@ -21,7 +21,7 @@ function LayoutHeader(): ReactElement {
           </Link>
         </h1>
 
-        <MobileMenu items={menuItems} className="md:hidden" />
+        <MobileMenu items={menuItems} className="md:hidden w-32" />
 
         <nav className="hidden md:block text-pink-200">
           <ul className="flex space-x-4 bg-opacity-0">
