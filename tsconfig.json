@@ -1,27 +1,21 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "esnext"
-        ],
-        // Module settings
-        "module": "esnext",
-        "moduleResolution": "node",
-        "isolatedModules": true,
-        // Nice import syntax
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
-        // Allow JSON import
-        "resolveJsonModule": true,
-        // Code checks
-        "strict": true,
-        "jsx": "react-jsx",
-        "noFallthroughCasesInSwitch": true,
-    },
-    "include": [
-        "src"
-    ]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // Module settings
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    // Nice import syntax
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    // Allow JSON import
+    "resolveJsonModule": true,
+    // Code checks
+    "strict": true,
+    "jsx": "react-jsx",
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"]
 }

@@ -6,20 +6,25 @@ module.exports = {
   output: {
     filename: 'index.bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    // Delete dist folder before build
     clean: true,
   },
+  // Minimizes js in production mode
   mode: process.env.NODE_ENV || 'development',
   resolve: {
+    // To resolve imports without file extensions
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
+    port: 3000,
     static: {
       directory: path.join(__dirname, 'public'),
     },
+    // Enable gzip compression for everything served
     compress: true,
-    port: 3000,
   },
   plugins: [
+    // Automatically create link in index.html
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
