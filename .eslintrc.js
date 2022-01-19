@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
   },
   parserOptions: { ecmaVersion: 8 },
-  ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'],
+  ignorePatterns: ['node_modules/*'],
   extends: ['eslint:recommended'],
   overrides: [
     {
@@ -14,44 +14,21 @@ module.exports = {
       settings: { react: { version: 'detect' } },
       env: {
         browser: true,
-        node: true,
         es6: true,
       },
       extends: [
-        'eslint:recommended', // ESLint rules
-        'plugin:@typescript-eslint/recommended', // TypeScript rules
-        'plugin:react/recommended', // React rules
-        'plugin:react-hooks/recommended', // React hooks rules
-        'plugin:jsx-a11y/recommended', // Accessibility rules
-        'plugin:prettier/recommended', // Prettier plugin
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+        'plugin:prettier/recommended',
       ],
       rules: {
+        // No need to import React
+        'react/react-in-jsx-scope': 'off',
         // Use TypeScript's types for component props instead
         'react/prop-types': 'off',
-        // No need to import React when using Next.js
-        'react/react-in-jsx-scope': 'off',
-        // This rule is not compatible with Next.js's <Link /> components
-        'jsx-a11y/anchor-is-valid': 'off',
-        // No unused variables
-        '@typescript-eslint/no-unused-vars': ['error'],
-        // Require return types on functions only where useful
-        '@typescript-eslint/explicit-function-return-type': [
-          'warn',
-          {
-            allowExpressions: true,
-            allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-          },
-        ],
-        // Include .prettierrc.js rules
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-        // Consistent imports
-        'sort-imports': [
-          'error',
-          {
-            allowSeparatedGroups: true,
-            memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none'],
-          },
-        ],
       },
     },
   ],
