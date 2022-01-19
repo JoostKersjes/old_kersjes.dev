@@ -12,4 +12,4 @@ Welcome to my personal web project!
 
 ### Minor
 
-- Apply and build on my understanding of web accessibility
+- Improve my understanding of web accessibility

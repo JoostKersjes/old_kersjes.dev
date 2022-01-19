@@ -22,6 +22,8 @@ module.exports = {
     },
     // Enable gzip compression for everything served
     compress: true,
+    // Open a new tab after starting
+    open: true,
   },
   plugins: [
     // Automatically create link in index.html
